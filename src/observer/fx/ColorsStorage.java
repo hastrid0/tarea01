@@ -1,13 +1,9 @@
 package observer.fx;
 
 import java.util.ArrayList;
-
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+
+
 
 public class ColorsStorage {
 	private GridPane root;	
@@ -22,7 +18,7 @@ public class ColorsStorage {
     	this.botones=new ArrayList<ColorButton>();
         
     	    	
-    	this.botones.add(new ColorButton("Verde","-fx-background-color: #008000",this));
+    	this.botones.add(new ColorButton("Amarillo","-fx-background-color: #ffff55",this));
     	this.botones.add(new ColorButton("Azul","-fx-background-color: #293492",this));
     	this.botones.add(new ColorButton("Rojo","-fx-background-color: #a00000",this));
     	
