@@ -2,8 +2,6 @@ package observer.fx;
 
 import java.util.Arrays;
 import java.util.*;
-
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,22 +14,18 @@ import javafx.stage.Stage;
 
 public class mainClass extends Application{
 	
+	ArrayList<String> colores = new ArrayList<String>(Arrays.asList("#55ff55","#aa00aa","#005d63","#ffaa00 ","#55ffff"));
+	ArrayList<String> nombrecolores= new ArrayList<String>(Arrays.asList("Verde","Dark Purple","Turquesa","Gold","Aqua"));
+	public static ColorsStorage station;
+	public static String colorNuevoBoton;
+	
 	public static void main(String[] args) {
         launch(args);
     }
-	
 		
-	
-	public static ColorsStorage station;
-	public static String colorNuevoBoton;
-	ArrayList<String> colores = new ArrayList<String>(Arrays.asList("#55ff55","#aa00aa","#005d63","#ffaa00 ","#55ffff"));
-	ArrayList<String> nombrecolores= new ArrayList<String>(Arrays.asList("Verde","Dark Purple","Turquesa","Gold","Aqua"));
-    
-	
 	@Override
     public void start(Stage primaryStage) {
     	
-        
     	station = new ColorsStorage();         
        
         VBox hb=new VBox();
@@ -48,16 +42,12 @@ public class mainClass extends Application{
             }
         
         
-        
         hb2.getChildren().add(nuevoBoton);
         hb.setSpacing(5);
         hb.setAlignment(Pos.CENTER);
         hb2.setSpacing(5);
         hb2.setAlignment(Pos.BOTTOM_CENTER);
         hb2.setPadding(new Insets(0,0,10,0));
-        
-        
-        
         
         station.getRoot().add(hb,0,1);
         station.getRoot().add(hb2,0,0);
@@ -72,11 +62,10 @@ public class mainClass extends Application{
         
     }   
     
-    public void cambiarColorNuevo(Button bt,VBox hb) {
+    public void cambiarColorNuevo(final Button bt,final VBox hb) {
     	
     	bt.setOnAction(new EventHandler<ActionEvent>() {
             
-            @Override
             public void handle(ActionEvent event) {
             	nuevoBoton(bt,hb);
             }
@@ -97,9 +86,6 @@ public class mainClass extends Application{
     		bt.setDisable(true);
     	}
     }
-    
-    
-
 }
 
 

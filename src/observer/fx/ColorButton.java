@@ -12,8 +12,6 @@ public class ColorButton {
 	private ColorsStorage st;
 	
 	
-	
-	
 	public ColorButton(String color,String colorCode,ColorsStorage st) {
 		this.st=st;
 		this.btn=new Button();
@@ -34,10 +32,7 @@ public void cambiarColor(ColorButton btnc){
             @Override
             public void handle(ActionEvent event) {            	
             	ColorsStorage.setcolorActual(btnc.getColor());
-            	st.getRoot().setStyle(btnc.getColorCode());
-            	
-            	
-                
+            	st.getRoot().setStyle(btnc.getColorCode());       
             }
         });
     
@@ -55,6 +50,8 @@ public void cambiarColor(ColorButton btnc){
 	public String getColor() {
 		return this.color;
 	}
+
+	
 	
 	
 	

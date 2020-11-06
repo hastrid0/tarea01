@@ -2,18 +2,17 @@ package Aspecto;
 
 import observer.fx.mainClass;
 import observer.fx.ColorsStorage;
+import observer.fx.Observador;
 
 
-public aspect Notification {
+public aspect Notification implements Observador{
 
 	
 	pointcut cambio(): call(* setStyle*(..));
 
 	after(): cambio(){
-		
-		
-		System.out.println("Se ha cambiado el color de la ventana a:"+ColorsStorage.getcolorActual());
 			
+		update();	
 	}
 
 	pointcut nuevo(): call(* nuevoBoton*(..));
@@ -25,5 +24,7 @@ public aspect Notification {
 			
 	}
 	
-	
+	public void update() {
+		System.out.println("Se ha cambiado el color de la ventana a:"+ColorsStorage.getcolorActual());
+	}
 }
