@@ -25,11 +25,11 @@ public class ColorButton {
 		
 	}
 	
-public void cambiarColor(ColorButton btnc){
+public void cambiarColor(final ColorButton btnc){
         
     	btnc.getBtn().setOnAction(new EventHandler<ActionEvent>() {
             
-            @Override
+            
             public void handle(ActionEvent event) {            	
             	ColorsStorage.setcolorActual(btnc.getColor());
             	st.getRoot().setStyle(btnc.getColorCode());       
